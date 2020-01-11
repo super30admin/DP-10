@@ -1,0 +1,33 @@
+/*
+leetcode: unsuccessful
+
+Test Case that I did not understand:
+k=1, N=2.
+
+
+Approach:
+
+I thought that a binary search should be able to give us the number of steps required.
+And if you have number of eggs less than the ln(N) i.e log of N base 2. that means you would not be able to perform binary search.
+So, in worst case you might have to take N steps.
+
+
+*/
+
+class Solution {
+    public int superEggDrop(int K, int N) {
+        
+        double a=Math.log(N);
+        double b=Math.log(2);
+        
+        
+        double result= Math.ceil(a/b);
+        
+        
+   //     if(N<=3) return N;
+      
+        if(K<result) return N;
+        return (int)result;
+    
+    }
+}
