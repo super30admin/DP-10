@@ -1,3 +1,8 @@
+// Time Complexity : O(MxN) M = number of attempts N = Number of eggs
+// Space Complexity : O(MxN)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
 class Solution {
     public int superEggDrop(int K, int N) {
         int[][] dp = new int[N+1][K+1];
