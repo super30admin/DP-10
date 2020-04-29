@@ -1,5 +1,5 @@
 // Time Complexity : O(n^3) => Each iteration we create a window of size 1 till n and explore all the elements
-// Space Complexity : O(n)
+// Space Complexity : O(n * n) size of DP Matrix
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
 
