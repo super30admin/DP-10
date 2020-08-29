@@ -3,6 +3,42 @@
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : No
 # Your code here along with comments explaining your approach
+
+# # backtrack solution:
+# class Solution:
+#     result = None 
+#     def maxCoins(self, nums):
+#         self.result = 0
+#         self.backtrack(nums, 0)
+#         return self.result 
+    
+#     def backtrack(self, nums, curr_sum) : 
+#         # base 
+#         if len(nums) == 0:
+#             return curr_sum
+#         # logic 
+#         for i in range(len(nums)):
+#             key = nums[i]
+#             left, right = 1, 1 
+#             if i == 0:
+#                 left =  1
+#             else:
+#                 left = nums[i-1]
+                
+#             if i == len(nums)-1 :
+#                 right = 1 
+#             else:
+#                 right = nums[i+1]
+            
+#             # action 
+#             nums.pop(i)
+#             # recurse
+#             self.result = max(self.result, self.backtrack(nums, curr_sum + (left*key*right)))
+#             # backtrack
+#             nums.insert(i, key)
+            
+#         return self.result
+
 class Solution:
     def maxCoins(self, nums):
         if len(nums) == 0:
