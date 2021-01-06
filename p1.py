@@ -1,3 +1,5 @@
+#Time: O(NK^2)
+#Space: O(NK)
 class Solution(object):
     def superEggDrop(self, K, N):
         """
