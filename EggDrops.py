@@ -20,3 +20,20 @@ class Solution:
         return dp[-1][-1]
 Time : O(KN2)
 Space: (KN)
+Approach - 2   
+class Solution:
+    def superEggDrop(self, K: int, N: int) -> int: 
+        dp = [[0]*(K+1) for _ in range(N+1)] 
+
+        #Cols = Eggs and #Rows = Attempts
+        attempts = 0
+        i, j = 0,0
+        //here i have to be incremented on top because 1, see how the matrix is built, 2 after each for loop iteration we need to check the last value, incrementing loses track of that
+        while i<len(dp) and dp[i][K]<N:
+            i+=1
+            for j in range(1,len(dp[0])):
+                dp[i][j] = 1 + dp[i-1][j] + dp[i-1][j-1] 
+
+        return i
+Time: KN
+Space: KN
