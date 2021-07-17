@@ -31,7 +31,7 @@ public class SuperEggDrop {
         int[][] dp = new int[K + 1][N + 1];
 
         // First second row incremented values
-
+        // With N egg, i will be reaching N attempts at the worst case
         for (int i = 1; i < dp[0].length; i++) {
             dp[1][i] = i;
         }
