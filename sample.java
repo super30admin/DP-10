@@ -1,7 +1,43 @@
-// Time Complexity :
-// Space Complexity :
-// Did this code successfully run on Leetcode :
-// Any problem you faced while coding this :
+// Time Complexity : O(N^3)
+// Space Complexity : O(N^2)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
 
 
-// Your code here along with comments explaining your approach
+class Solution {
+    public int maxCoins(int[] nums) {
+        // if(nums == null || nums.length == 0) {
+        //     return 0;
+        // }
+        int n = nums.length;
+        int[][] dp = new int[n][n];
+        
+        for(int length = 1; length <= n; length++) {
+            for(int i = 0; i <= n-length;i++) {
+                int j = i + length - 1;
+                for(int k = i; k <= j; k++) {
+                    int burstLeft = 0; 
+                    int burstRight = 0;
+                    
+                    if(k != i) {
+                        burstLeft = dp[i][k-1];
+                    }
+                    if(k != j) {
+                         burstRight = dp[k+1][j];
+                    }
+                    int left = 1; 
+                    int right = 1;
+                    if(i != 0) {
+                        left = nums[i-1];
+                    }
+                    if(j != n-1) {
+                        right = nums[j+1];
+                    }
+                    dp[i][j] = Math.max(dp[i][j], burstLeft + left * nums[k] * 
+                                                right + burstRight);
+                }
+            }
+        }
+        return dp[0][n-1];
+    }
+}
