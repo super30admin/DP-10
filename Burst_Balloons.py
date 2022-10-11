@@ -1,5 +1,7 @@
+# Dp Solution
 # Time complexity : O(n^3)
 # Space complexity : O(n^2)
+# Leetcode : Solved and submitted
 
 class Solution:
     def maxCoins(self, nums: List[int]) -> int:
