@@ -1,6 +1,6 @@
 // Mind Bursting problem
-// Time Complexity:
-// Space Complexity:
+// Time Complexity: O(n * k)
+// Space Complexity: O(n * k)
 class Solution {
     public int superEggDrop(int k, int n) {
         if (k ==0 || n ==0) return 0;
