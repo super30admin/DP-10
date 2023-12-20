@@ -40,3 +40,25 @@ class Solution {
         return dp[0][n-1];
     }
 }
+
+// Time Complexity : O(nk)
+// Space Complexity : O(nk)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : I didnt face any problem while coding this
+
+// ## Problem1: Super Egg Drop (https://leetcode.com/problems/super-egg-drop/)
+
+class Solution {
+    public int superEggDrop(int k, int n) {
+        int[][] dp = new int[n+1][k+1];
+
+        int attempts = 0;
+        while(dp[attempts][k] < n){
+            attempts++;
+            for(int j=1; j <= k; j++){
+                dp[attempts][j] = 1 + dp[attempts-1][j-1] + dp[attempts-1][j];
+            }
+        }
+        return attempts;
+    }
+}
