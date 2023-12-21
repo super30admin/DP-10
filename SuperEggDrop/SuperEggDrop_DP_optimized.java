@@ -3,7 +3,7 @@
 /* Space Complexity : O(n*k)
  * k - no. of eggs */
 // Did this code successfully run on Leetcode : Yes 
-// Any problem you faced while coding this : TLE
+// Any problem you faced while coding this :
 
 class Solution {
     public int superEggDrop(int k, int n) {
