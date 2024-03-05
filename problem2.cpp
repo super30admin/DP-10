@@ -38,3 +38,29 @@ public:
         return dp(1,n,nums);
     }
 };
+
+//the one with tabulation 
+
+
+class Solution{
+public:
+    int maxCoins(vector<int>& nums) {
+        int n = nums.size();
+        vector<vector<int>> dp_arr(n+2,vector<int>(n+2,0));
+        nums.push_back(1);
+        nums.insert(nums.begin(),1);
+        for(int i{n};i>=1;--i){
+            for(int j{1};j<=n;++j)
+            {
+                if(i>j) continue;
+                int maxi{INT_MIN};
+                for(int idx{i};idx<=j;++idx){
+                    int cost = nums.at(i-1)*nums.at(idx)*nums.at(j+1) + dp_arr.at(i).at(idx-1) + dp_arr.at(idx+1).at(j);
+                    maxi = max(maxi,cost);
+                }
+                dp_arr[i][j] = maxi;
+            }
+        }
+        return dp_arr.at(1).at(n);
+    }
+};
